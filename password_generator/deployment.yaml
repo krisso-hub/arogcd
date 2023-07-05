@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: password_generator
+  name: password_generator_deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: password_generator
+  template:
+    metadata:
+      labels:
+        app: password_generator
+    spec:
+      containers:
+      - image: krisshub/password_genrator
+        name: password_generator

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: password_generator
+  name: password_generator_service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: password_generator
+  type: NodePort
